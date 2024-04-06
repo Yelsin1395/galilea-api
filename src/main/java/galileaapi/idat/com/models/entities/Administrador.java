@@ -1,5 +1,6 @@
 package galileaapi.idat.com.models.entities;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 

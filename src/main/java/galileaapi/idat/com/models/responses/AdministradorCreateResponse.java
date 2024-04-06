@@ -7,6 +7,6 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class AdministradorResponse {
-    private String administradorId;
+public class AdministradorCreateResponse {
+    private String id;
 }
