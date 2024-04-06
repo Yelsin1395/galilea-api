@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -18,5 +19,10 @@ public class AdministradorServiceImpl implements AdministradorService {
     @Override
     public List<Administrador> getAll() {
         return (List<Administrador>) administradorRepository.findAll();
+    }
+
+    @Override
+    public Optional<Administrador> getById(String id) {
+        return administradorRepository.findById(id);
     }
 }
