@@ -1,6 +1,5 @@
 package galileaapi.idat.com.models.entities;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,9 +8,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "administrador", uniqueConstraints = {@UniqueConstraint(columnNames = {"usuario"})})
+@Table(name = "administrador")
 public class Administrador {
     @Id
+    @Column(nullable = false)
     private String administradorId;
 
     @Column(nullable = false)
@@ -26,4 +26,6 @@ public class Administrador {
     private String usuario;
     @Column(nullable = false)
     private String contrasena;
+    @Column(nullable = false)
+    private Boolean eliminado;
 }
