@@ -34,18 +34,20 @@ public class AdministradorServiceImpl implements AdministradorService {
         Administrador entity = new Administrador();
         AdministradorCreateResponse response = new AdministradorCreateResponse();
 
-        UUID uuid = UUID.randomUUID();
+        String id = UUID.randomUUID().toString();
 
-        entity.setAdministradorId(uuid.toString());
+        entity.setAdministradorId(id);
         entity.setTipoDocumento(entry.getTipoDocumento());
-        entity.setNumeroDocumento(entry.getTipoDocumento());
+        entity.setNumeroDocumento(entry.getNumeroDocumento());
         entity.setNombre(entry.getNombre());
         entity.setApellido(entry.getApellido());
         entity.setUsuario(entry.getUsuario());
+        entity.setContrasena(entry.getContrasena());
+        entity.setEliminado(false);
 
         administradorRepository.save(entity);
 
-        response.setId(uuid.toString());
+        response.setId(id);
 
         return response;
     }
