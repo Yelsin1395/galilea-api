@@ -4,9 +4,11 @@ import galileaapi.idat.com.models.entities.Administrador;
 import galileaapi.idat.com.models.requests.AdministradorCreateRequest;
 import galileaapi.idat.com.models.responses.AdministradorCreateResponse;
 import galileaapi.idat.com.repository.AdministradorRepository;
+import galileaapi.idat.com.repository.AuthRepository;
 import galileaapi.idat.com.services.AdministradorService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,9 +21,17 @@ public class AdministradorServiceImpl implements AdministradorService {
     @Autowired
     AdministradorRepository administradorRepository;
 
+    @Autowired
+    AuthRepository authRepository;
+
     @Override
     public List<Administrador> getAll() {
         return (List<Administrador>) administradorRepository.findAll();
+    }
+
+    @Override
+    public UserDetails getByUsername(String usuario) {
+        return authRepository.findByUsername(usuario);
     }
 
     @Override
