@@ -22,6 +22,7 @@ public class MoradorServiceImpl implements  MoradorService {
     @Autowired
     MoradorRepository moradorRepository;
 
+    @Override
     public List<Morador>getAll(){
         return (List<Morador>) moradorRepository.findAll();
     }
@@ -40,8 +41,7 @@ public class MoradorServiceImpl implements  MoradorService {
         String id = UUID.randomUUID().toString();
 
         entity.setMoradorId(id);
-
-        entity.setTipoDocumento(entry.getTipoDocumento());
+        entity.setAdministradorId(entry.getAdministradorId());
         entity.setTipoDocumento(entry.getTipoDocumento());
         entity.setNumeroDocumento(entry.getNumeroDocumento());
         entity.setNombre(entry.getNombre());

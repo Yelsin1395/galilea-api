@@ -25,6 +25,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authRequest -> authRequest
                         .requestMatchers("/v1/auth/**").permitAll()
                         .requestMatchers("/v1/administradores/**").authenticated()
+                        .requestMatchers("/v1/habitante/**").authenticated()
+                        .requestMatchers("/v1/moradores/**").authenticated()
+                        .requestMatchers("/v1/visitas/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager -> sessionManager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

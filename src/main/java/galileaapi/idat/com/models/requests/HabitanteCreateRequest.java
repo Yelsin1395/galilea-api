@@ -8,15 +8,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-public class MoradorCreateRequest {
-    
+public class HabitanteCreateRequest {
     @NotBlank
-    private String administradorId;
+    private String moradorId; 
     @NotBlank
     private String tipoDocumento;
     @NotBlank
@@ -26,9 +27,7 @@ public class MoradorCreateRequest {
     @NotBlank
     private String apellido;
     @NotBlank
-    private String direccion;
-    @NotBlank
-    private String tipoMorador;
+    private String parentezco;
     @NotBlank
     private boolean eliminado;
 

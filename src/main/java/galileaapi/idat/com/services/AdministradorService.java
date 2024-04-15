@@ -1,7 +1,6 @@
 package galileaapi.idat.com.services;
 
 import galileaapi.idat.com.models.entities.Administrador;
-import galileaapi.idat.com.models.entities.User;
 import galileaapi.idat.com.models.requests.AdministradorCreateRequest;
 import org.springframework.security.core.userdetails.UserDetails;
 

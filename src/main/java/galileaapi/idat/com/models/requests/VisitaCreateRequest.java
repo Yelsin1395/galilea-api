@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class MoradorCreateRequest {
+public class VisitaCreateRequest {
     
     @NotBlank
     private String administradorId;
@@ -26,10 +26,15 @@ public class MoradorCreateRequest {
     @NotBlank
     private String apellido;
     @NotBlank
+    private String tipoVehiculo;
+    @NotBlank
+    private String fechaHoraIngreso;
+    @NotBlank
+    private String fechaHoraSalida;
+    @NotBlank
     private String direccion;
     @NotBlank
-    private String tipoMorador;
+    private boolean direccionValida;
     @NotBlank
     private boolean eliminado;
-
 }
