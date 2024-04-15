@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "habitante")
 public class Habitante {
-
     @Id
     @Column(nullable=false)
     private String habitanteId;
